@@ -1,10 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Rubik+Dirt&family=Slabo+13px&display=swap');
+
 .App {
   text-align: center;
+}
+
+#nav-links {
+  margin-top: 56px;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.title-text {
+  text-transform: uppercase;
+  font-family: 'Rubik Dirt', serif;
+}
+
+.css-1bv5yfe-MuiTypography-root,
+.css-rizt0-MuiTypography-root,
+.css-plnrbk-MuiButtonBase-root-MuiButton-root {
+  font-family: 'Outfit', serif;
+  font-weight: bold;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -26,6 +44,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+header {
+  background-color: green !important;
 }
 
 @keyframes App-logo-spin {
