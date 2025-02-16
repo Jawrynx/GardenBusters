@@ -14,6 +14,8 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 
+import './css/Navbar.css';
+
 export default function ButtonAppBar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -33,7 +35,7 @@ export default function ButtonAppBar() {
       role="presentation"
     >
       <List>
-        {["Home", "Services", "About", "Contact", "Testimonials"].map(
+        {["Home", "Services", "About", "Contact"].map(
           (text) => (
             <ListItem key={text} disablePadding>
               <ListItemButton component={Link} to={`/${text.toLowerCase()}`}>
@@ -79,9 +81,6 @@ export default function ButtonAppBar() {
             </Button>
             <Button color="inherit" component={Link} to="/contact">
               Contact
-            </Button>
-            <Button color="inherit" component={Link} to="/testimonials">
-              Testimonials
             </Button>
           </Box>
         </Toolbar>

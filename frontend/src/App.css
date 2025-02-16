@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Rubik+Dirt&family=Slabo+13px&display=swap');
 
+body {
+  background-color: rgb(115, 255, 0);
+}
+
 .App {
   text-align: center;
 }
@@ -16,6 +20,7 @@
 .title-text {
   text-transform: uppercase;
   font-family: 'Rubik Dirt', serif;
+  color: white;
 }
 
 .css-1bv5yfe-MuiTypography-root,
@@ -44,10 +49,6 @@
 
 .App-link {
   color: #61dafb;
-}
-
-header {
-  background-color: green !important;
 }
 
 @keyframes App-logo-spin {
