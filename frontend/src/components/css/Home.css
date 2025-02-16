@@ -4,14 +4,15 @@
     background-repeat: no-repeat;
     background-position: top;
     width: 100%;
-    height: 700px;
-    margin-top: 20px;
+    height: 85vh;
+    margin: 20px;
     border-radius: 15px;
     border: 1px solid darkgreen;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    box-shadow: 2px 2px 20px 5px black;
 }
 
 .home-container {
