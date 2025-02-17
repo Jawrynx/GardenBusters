@@ -93,7 +93,53 @@
     opacity: 1; 
     transform: translateY(0);
 }
-  
+
+.home-services-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-services-container > .content-section {
+    margin: 20px;
+    background-color: rgb(231, 231, 231);
+    border-radius: 15px;
+    border: 2px solid green;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-services-container > .content-section > h2 {
+    text-transform: uppercase;
+    font-family: 'Rubik Dirt', serif;
+    background-color: yellow;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+.home-services-container > .content-section > p {
+    margin: 20px;
+    width: 100%;
+}
+
+.home-services-container > div > .css-1ricwku-MuiButtonBase-root-MuiToggleButton-root {
+    font-family: 'Outfit', serif;
+}
+
+
+
+.home-services-container > div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+}
+
+.home-services-container > div > button {
+    width: 100%;
+}
 
 /* Media Queries */
 @media (max-width: 1200px) {
