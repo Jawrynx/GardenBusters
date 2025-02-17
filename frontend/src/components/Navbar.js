@@ -49,7 +49,7 @@ export default function ButtonAppBar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} id='Navbar'>
       <AppBar position="static">
         <Toolbar>
           {/* Keep the IconButton for the menu icon */}

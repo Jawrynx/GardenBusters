@@ -39,12 +39,12 @@ function Home() {
 
           switch (alignment) {
             case "fencing":
-              setAlignment("gardening");
+              setAlignment("garden-care");
               break;
-            case "gardening":
-              setAlignment("slabbing");
+            case "garden-care":
+              setAlignment("paving");
               break;
-            case "slabbing":
+            case "paving":
               setAlignment("fencing");
               break;
             default:
@@ -102,7 +102,7 @@ function Home() {
             Fencing
           </ToggleButton>
           <ToggleButton
-            value="gardening"
+            value="garden-care"
             sx={{
               backgroundColor: "rgba(0,0,0,0.9)",
               color: "white",
@@ -116,10 +116,10 @@ function Home() {
               },
             }}
           >
-            Gardening
+            Garden Care
           </ToggleButton>
           <ToggleButton
-            value="slabbing"
+            value="paving"
             sx={{
               backgroundColor: "rgba(0,0,0,0.9)",
               color: "white",
@@ -133,7 +133,7 @@ function Home() {
               },
             }}
           >
-            Slabbing
+            Paving
           </ToggleButton>
         </ToggleButtonGroup>
 
@@ -148,9 +148,9 @@ function Home() {
           </div>
         )}
 
-        {alignment === "gardening" && (
-          <div className="content-section" data-section="gardening">
-            <h2>Gardening Services</h2>
+        {alignment === "garden-care" && (
+          <div className="content-section" data-section="garden-care">
+            <h2>Garden Care Services</h2>
             <p>
               Our expert gardeners can help you create and maintain a beautiful
               garden.
@@ -159,11 +159,11 @@ function Home() {
           </div>
         )}
 
-        {alignment === "slabbing" && (
-          <div className="content-section" data-section="slabbing">
-            <h2>Slabbing Services</h2>
+        {alignment === "paving" && (
+          <div className="content-section" data-section="paving">
+            <h2>Paving Services</h2>
             <p>
-              We provide professional slabbing services for patios, walkways,
+              We provide professional paving services for patios, walkways,
               and more.
             </p>
           </div>

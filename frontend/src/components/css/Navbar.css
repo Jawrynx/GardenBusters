@@ -2,19 +2,29 @@
 
 
 body {
-    margin: 10px 20px;
+    margin: 10px 0px;
 }
 
 header {
+    background-color: rgba(0,0,0, 0) !important;
+}
+
+#Navbar {
     border-radius: 15px;
     background-color: rgb(0, 180, 0) !important;
+    display: block;
+    margin: 0px 20px;
 }
+
 
 .css-1ygil4i-MuiToolbar-root {
     min-height: 50px !important;
 }
 
-.css-1bv5yfe-MuiTypography-root,
+.css-1bv5yfe-MuiTypography-root {
+    font-family: 'Rubik Dirt', serif !important;
+}
+
 .css-plnrbk-MuiButtonBase-root-MuiButton-root,
 .css-rizt0-MuiTypography-root {
     font-family: 'Outfit', serif !important;
