@@ -137,9 +137,77 @@
     width: 90%;
 }
 
+@-webkit-keyframes fadeEffect {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+@keyframes fadeEffect {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeEffect2 {
+    0% { background-color: rgba(0, 0, 0, 0.9); }
+    100% { background-color: green; } 
+}
+  
+@keyframes fadeEffect2 {
+    0% { background-color: rgba(0, 0, 0, 0.9); }
+    100% { background-color: green; }
+}
+
+@-webkit-keyframes fadeInverse {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+
+@keyframes fadeInverse {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@-webkit-keyframes fadeInverse2 {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+
+@keyframes fadeInverse2 {
+    0% { background-color: green;}
+    100% { background-color: rgba(0, 0, 0, 0.9); }
+}
+
 .home-services-container > div > button {
     width: 100%;
 }
+
+.home-services-container > div > button.Mui-selected {
+    width: 100%;
+    animation: fadeEffect2 1s ease-in-out forwards;
+}
+
+.home-services-container > div > button.Mui-selected.hide {
+    animation: fadeInverse2 0.5s ease-in-out forwards;
+}
+
+.content-section {
+    opacity: 0;
+    animation: fadeEffect 2s ease-in-out forwards; /* Apply the animation */
+}
+
+.content-section.show {
+    opacity: 1;
+
+}
+
+.content-section.hide {
+    opacity: 0;
+    animation: fadeInverse 0.5s ease-in-out forwards;
+}
+  /* Other styles */
+  
 
 /* Media Queries */
 @media (max-width: 1200px) {

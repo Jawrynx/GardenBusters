@@ -21,6 +21,44 @@ function Home() {
 
   const [alignment, setAlignment] = useState("fencing");
 
+  useEffect(() => {
+
+    // Creates an interval to switch between tabs every 10 seconds
+    const intervalId = setInterval(() => {
+      const contentSections = document.querySelectorAll(".content-section");
+      const currentSection = document.querySelector(`.content-section[data-section="${alignment}"]`);
+
+      const buttonsAll = document.querySelectorAll('.home-services-container > div > button');
+      const currentButton = document.querySelector('.home-services-container > div > button.Mui-selected');
+
+      if (currentSection) {
+        currentSection.classList.add("hide");
+        currentButton.classList.add("hide");
+
+        setTimeout(() => {
+
+          switch (alignment) {
+            case "fencing":
+              setAlignment("gardening");
+              break;
+            case "gardening":
+              setAlignment("slabbing");
+              break;
+            case "slabbing":
+              setAlignment("fencing");
+              break;
+            default:
+              setAlignment("fencing");
+          }
+        }, 500);
+      }
+    }, 10000); 
+
+    return () => clearInterval(intervalId);
+  }, [alignment]);
+
+  // Tab Animation
+
   const handleChange = (event, newAlignment) => {
     setAlignment(newAlignment);
   };
@@ -98,37 +136,36 @@ function Home() {
             Slabbing
           </ToggleButton>
         </ToggleButtonGroup>
+
         {/* Conditionally render sections based on selected value */}
         {alignment === "fencing" && (
-          <div className="content-section">
+          <div className="content-section" data-section="fencing">
             <h2>Fencing Services</h2>
             <p>
               We offer a wide range of fencing services, including
               installation, repair, and replacement.
             </p>
-            {/* Add more content for fencing services */}
           </div>
         )}
 
         {alignment === "gardening" && (
-          <div className="content-section">
+          <div className="content-section" data-section="gardening">
             <h2>Gardening Services</h2>
             <p>
               Our expert gardeners can help you create and maintain a beautiful
               garden.
             </p>
-            {/* Add more content for gardening services */}
+
           </div>
         )}
 
         {alignment === "slabbing" && (
-          <div className="content-section">
+          <div className="content-section" data-section="slabbing">
             <h2>Slabbing Services</h2>
             <p>
               We provide professional slabbing services for patios, walkways,
               and more.
             </p>
-            {/* Add more content for slabbing services */}
           </div>
         )}
       </div>
