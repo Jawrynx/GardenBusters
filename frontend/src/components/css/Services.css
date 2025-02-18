@@ -1,0 +1,16 @@
+#service-list {
+    display: flex;
+    justify-content: center;
+}
+
+#service-list > div {
+    border-radius: 15px;
+}
+
+#service-list .css-ar9ysw-JoyTypography-root,
+#service-list .css-n3pxpz-JoyTypography-root,
+#service-list .css-djhvuu-JoyTypography-root,
+#service-list .css-h7h2qx-JoyTypography-root,
+#service-list .css-1eui4ox-JoyButton-root {
+    font-family: 'Outfit', serif !important;
+}

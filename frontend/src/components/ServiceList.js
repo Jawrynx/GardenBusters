@@ -5,6 +5,12 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
+import Card from '@mui/joy/Card';
+import CardContent from '@mui/joy/CardContent';
+import IconButton from '@mui/joy/IconButton';
+import AspectRatio from '@mui/joy/AspectRatio';
+import Typography from '@mui/joy/Typography';
+import Button from '@mui/joy/Button';
 
 function ServiceList() {
   const [services, setServices] = useState();
@@ -14,17 +20,16 @@ function ServiceList() {
     const fetchServices = async () => {
       try {
         const response = await axios.get("http://127.0.0.1:8000/api/services/");
-        console.log(response);
         setServices(response.data);
       } catch (error) {
-        console.log("Error fetching services:", error);
+        console.error("Error fetching services:", error);
       } finally {
         setIsLoading(false);
       }
     };
 
     fetchServices();
-  },);
+  },[]);
 
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark"? "#1A2027": "#fff",
@@ -38,20 +43,56 @@ function ServiceList() {
     return <div>Loading services...</div>;
   }
 
-  // Display only the first service
-  const service = services;
-
-  if (!service) {
-    return <div>No services found.</div>;
-  }
-
   return (
-    <Box sx={{ width: "90%" }}>
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={6} md={4}>
+    <div id='service-list'>
+      <Paper
+        sx={{
+          p: 2,
+          width: "90%",
+          backgroundColor: "lightgray",
+        }}
+      >
+        <Grid container spacing={2}>
+          {services.map((service) => (
+            <Grid item xs={12} sm={6} md={4} key={service.id}>
+              <Link
+                to={`/services/${service.id}`}
+                style={{ textDecoration: "none" }}
+              >
+                <Card sx={{height: 480}}>
+                  <div>
+                    <Typography level="title-lg">{service.title}</Typography>
+                    <Typography level="body-sm">{service.sub_heading}</Typography>
+                  </div>
+                  <AspectRatio minHeight="120px" maxHeight="200px">
+                    <img
+                      src={service.image}
+                      loading="lazy"
+                      alt={service.title}
+                    />
+                  </AspectRatio>
+                  <CardContent orientation="horizontal" sx={{display: 'flex', flexDirection: 'column'}}>
+                    <div>
+                      <Typography level="body-xs">Description:</Typography>
+                      <Typography sx={{ fontSize: 'sm', fontWeight: 'lg' }}>{service.description}</Typography>
+                    </div>
+                    <Button
+                      variant="solid"
+                      size="md"
+                      color="primary"
+                      aria-label={service.title}
+                      sx={{ ml: 'auto', alignSelf: 'center', fontWeight: 600 }}
+                    >
+                      Explore
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Link>
+            </Grid>
+          ))}
         </Grid>
-      </Grid>
-    </Box>
+      </Paper>
+    </div>
   );
 }
 
