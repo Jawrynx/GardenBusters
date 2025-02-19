@@ -99,7 +99,7 @@ function Home() {
               },
             }}
           >
-            Fencing
+            Fencing Services
           </ToggleButton>
           <ToggleButton
             value="garden-care"
@@ -133,7 +133,7 @@ function Home() {
               },
             }}
           >
-            Paving
+            Slabbing/Paving
           </ToggleButton>
         </ToggleButtonGroup>
 
