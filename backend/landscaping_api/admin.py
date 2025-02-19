@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.db import models
-from.models import Service
+from.models import Service, Image
 from.widgets import ListWidget 
 
 class ServiceAdmin(admin.ModelAdmin):
@@ -9,3 +9,4 @@ class ServiceAdmin(admin.ModelAdmin):
     }
 
 admin.site.register(Service, ServiceAdmin)
+admin.site.register(Image)

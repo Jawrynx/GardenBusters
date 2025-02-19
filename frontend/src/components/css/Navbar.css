@@ -13,7 +13,7 @@ header {
     border-radius: 15px;
     background-color: rgb(0, 180, 0) !important;
     display: block;
-    margin: 0px 20px;
+    margin: 0px 10%;
 }
 
 
@@ -50,4 +50,10 @@ header {
     background-color: rgb(1, 182, 1);
     border: 1px solid darkgreen;
     color: white;
+}
+
+@media (max-width: 768px) {
+    #Navbar {
+        margin: 0px 20px !important;
+    }
 }

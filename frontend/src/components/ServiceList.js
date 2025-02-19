@@ -65,11 +65,13 @@ function ServiceList() {
                     <Typography level="body-sm">{service.sub_heading}</Typography>
                   </div>
                   <AspectRatio minHeight="120px" maxHeight="200px">
-                    <img
-                      src={service.image}
-                      loading="lazy"
-                      alt={service.title}
-                    />
+                    {service.images && service.images.length > 0 && ( // Check if images exist
+                      <img
+                        src={service.images[0].image} // Display the first image
+                        loading="lazy"
+                        alt={service.title}
+                      />
+                    )}
                   </AspectRatio>
                   <CardContent orientation="horizontal" sx={{display: 'flex', flexDirection: 'column'}}>
                     <div>

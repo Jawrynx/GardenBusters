@@ -14,3 +14,83 @@
 #service-list .css-1eui4ox-JoyButton-root {
     font-family: 'Outfit', serif !important;
 }
+
+#single-service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+}
+
+#single-service > div {
+    width: 75%;
+    border-radius: 15px;
+}
+
+#single-service > div > #image-slide > div > #service-image {
+    margin: 5px;
+    width: 98%;
+    border-radius: 10px;
+    height: 50vh;
+    overflow-x: hidden;
+    object-fit: cover;
+}
+
+#single-service > div > h2 {
+    font-family: 'Rubik Dirt', serif !important;
+    text-transform: uppercase;
+    color: darkgreen;
+    font-size: 3rem;
+    background-color: yellow;
+    border-radius: 10px;
+    padding: 20px 0;
+    margin: 0 5px 20px 5px;
+    border: 3px solid black;
+    text-shadow: 0px 1px 40px white;
+}
+
+#single-service > div > p {
+    font-family: 'Outfit', serif;
+    margin: 20px 5px;
+    padding: 20px;
+    background-color: rgb(81, 255, 0);
+    border-radius: 10px;
+}
+
+#image-slide {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+#image-slide img {
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 100%;
+    animation: slideIn 0.5s forwards; 
+}
+  
+@keyframes slideIn {
+    to {
+      left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    #single-service > div > h2 {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 551px) {
+    #single-service > div > h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #single-service > div > h2 {
+        font-size: 1.5rem;
+    }
+}
