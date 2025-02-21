@@ -78,6 +78,7 @@ function ServicePage() {
               </div>
             </div>
             <p>{service.description}</p>
+            <p class='detailed'>{service.detailed_description}</p>
           </Paper>
           <ContactForm service={service} />
         </div>

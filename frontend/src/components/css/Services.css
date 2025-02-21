@@ -58,10 +58,17 @@
 
 #single-service > div > p {
     font-family: 'Outfit', serif;
+    font-weight: bold;
     margin: 20px 5px;
     padding: 20px;
     background-color: rgb(81, 255, 0);
     border-radius: 10px;
+}
+
+#single-service > div > p.detailed {
+    font-weight: 300;
+    background-color: lightgray;
+
 }
 
 #image-slide {

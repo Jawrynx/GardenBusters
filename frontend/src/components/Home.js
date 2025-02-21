@@ -2,11 +2,29 @@ import React, { useEffect, useRef, useState } from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import "./css/Home.css";
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+
 
 function Home() {
   const bannerRef = useRef(null);
   const pRef = useRef(null);
   const h3Ref = useRef(null);
+  const [service, setService] = useState();
+
+  useEffect(() => {
+    
+    const fetchService = async () => {
+      try {
+        const response = await axios.get(`http://127.0.0.1:8000/api/services/`);
+        setService(response.data);
+      } catch (error) {
+        console.error('Error fetching service:', error);
+      }
+    };
+
+    fetchService();
+  }, []);
 
   useEffect(() => {
     if (bannerRef.current && pRef.current && h3Ref.current) {
@@ -63,6 +81,14 @@ function Home() {
     setAlignment(newAlignment);
   };
 
+  if (!service || service.length === 0) {
+    return <div>Loading services...</div>;
+  }
+
+  const slabbingService = service.find((service) => service.id === 1);
+  const fencingService = service.find((service) => service.id === 2);
+  const gardenCare = service.find((service) => service.id === 3);
+
   return (
     <>
       <div className="home-container">
@@ -84,87 +110,110 @@ function Home() {
           onChange={handleChange}
           aria-label="Platform"
         >
-          <ToggleButton
-            value="fencing"
-            sx={{
-              backgroundColor: "rgba(0,0,0,0.9)",
-              color: "white",
-              "&.Mui-selected": {
-                backgroundColor: "green",
+          
+          {fencingService && (
+            <ToggleButton
+              value="fencing"
+              sx={{
+                backgroundColor: "rgba(0,0,0,0.9)",
                 color: "white",
-              },
-              "&:hover": {
-                backgroundColor: "green",
+                "&.Mui-selected": {
+                  backgroundColor: "green",
+                  color: "white",
+                },
+                "&:hover": {
+                  backgroundColor: "green",
+                  color: "white",
+                },
+              }}
+            >
+              Fencing Services
+            </ToggleButton>
+          )}
+
+          {gardenCare && (
+            <ToggleButton
+              value="garden-care"
+              sx={{
+                backgroundColor: "rgba(0,0,0,0.9)",
                 color: "white",
-              },
-            }}
-          >
-            Fencing Services
-          </ToggleButton>
-          <ToggleButton
-            value="garden-care"
-            sx={{
-              backgroundColor: "rgba(0,0,0,0.9)",
-              color: "white",
-              "&.Mui-selected": {
-                backgroundColor: "green",
+                "&.Mui-selected": {
+                  backgroundColor: "green",
+                  color: "white",
+                },
+                "&:hover": {
+                  backgroundColor: "green",
+                  color: "white",
+                },
+              }}
+            >
+              Garden Care
+            </ToggleButton>
+          )}
+
+          {slabbingService && (
+            <ToggleButton
+              value="paving"
+              sx={{
+                backgroundColor: "rgba(0,0,0,0.9)",
                 color: "white",
-              },
-              "&:hover": {
-                backgroundColor: "green",
-                color: "white",
-              },
-            }}
-          >
-            Garden Care
-          </ToggleButton>
-          <ToggleButton
-            value="paving"
-            sx={{
-              backgroundColor: "rgba(0,0,0,0.9)",
-              color: "white",
-              "&.Mui-selected": {
-                backgroundColor: "green",
-                color: "white",
-              },
-              "&:hover": {
-                backgroundColor: "green",
-                color: "white",
-              },
-            }}
-          >
-            Slabbing/Paving
-          </ToggleButton>
+                "&.Mui-selected": {
+                  backgroundColor: "green",
+                  color: "white",
+                },
+                "&:hover": {
+                  backgroundColor: "green",
+                  color: "white",
+                },
+              }}
+            >
+              Slabbing & Paving
+            </ToggleButton>
+          )}
         </ToggleButtonGroup>
 
         {/* Conditionally render sections based on selected value */}
-        {alignment === "fencing" && (
+        {alignment === "fencing" && fencingService && (
           <div className="content-section" data-section="fencing">
-            <h2>Fencing Services</h2>
+            <div>
+              <h2>{fencingService.title}</h2>
+              <p>
+                {fencingService.description}
+              </p>
+            </div>
+            <img src={fencingService.images[0].image} ></img>
             <p>
-              We offer a wide range of fencing services, including
-              installation, repair, and replacement.
+                {fencingService.detailed_description}
             </p>
           </div>
         )}
 
-        {alignment === "garden-care" && (
+        {alignment === "garden-care" && gardenCare && (
           <div className="content-section" data-section="garden-care">
-            <h2>Garden Care Services</h2>
+            <div>
+              <h2>{gardenCare.title}</h2>
+              <p>
+                {gardenCare.description}
+              </p>
+            </div>
+            <img src={gardenCare.images[0].image} />
             <p>
-              Our expert gardeners can help you create and maintain a beautiful
-              garden.
+                {gardenCare.detailed_description}
             </p>
-
           </div>
         )}
 
-        {alignment === "paving" && (
+        {alignment === "paving" && slabbingService && (
           <div className="content-section" data-section="paving">
-            <h2>Paving Services</h2>
+            <div>
+              <h2>{slabbingService.title}</h2>
+              <p>
+                {slabbingService.description}
+              </p>
+            </div>
+            <img src={slabbingService.images[0].image} />
             <p>
-              We provide professional paving services for patios, walkways,
-              and more.
+                {slabbingService.detailed_description}
             </p>
           </div>
         )}

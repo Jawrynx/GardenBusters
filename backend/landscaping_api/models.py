@@ -3,14 +3,15 @@ from django.db import models
 # Create your models here.
 
 class Image(models.Model):
-    image = models.ImageField(upload_to='service_images/')
+    image = models.ImageField(upload_to='service_images/', null=True)
 
 
 class Service(models.Model):
     title = models.CharField(max_length=255, null=True)
     sub_heading = models.CharField(max_length=255)
     description = models.TextField()
-    images = models.ManyToManyField(Image)
+    detailed_description = models.TextField(null=True)
+    images = models.ManyToManyField(Image, blank=True, null=True)
 
     def __str__(self):
         return self.title

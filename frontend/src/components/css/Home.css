@@ -106,11 +106,19 @@
     background-color: rgb(231, 231, 231);
     border-radius: 15px;
     border: 2px solid green;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
 
-.home-services-container > .content-section > h2 {
+.home-services-container > .content-section > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-services-container > .content-section > div > h2 {
     text-transform: uppercase;
     font-family: 'Rubik Dirt', serif;
     background-color: yellow;
@@ -118,11 +126,22 @@
     border-radius: 10px;
     border: 1px solid black;
     margin: 20px;
+    width: 90%;
 }
 
-.home-services-container > .content-section > p {
+.home-services-container > .content-section > div > p,
+#root > div > div.App > div.home-services-container > .content-section > p {
     margin: 20px;
-    width: 100%;
+    width: 95%;
+    text-align: center;
+}
+
+.home-services-container > .content-section > img {
+    height: 300px;
+    width: 96%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 .home-services-container > div > .css-1ricwku-MuiButtonBase-root-MuiToggleButton-root {
@@ -131,7 +150,7 @@
 
 
 
-.home-services-container > div {
+.home-services-container > div:first-child {
     display: flex;
     justify-content: space-evenly;
     width: 90%;
@@ -265,6 +284,9 @@
         font-size: 0.9rem;
     }
     
+    #root > div > div.App > div.home-services-container > .content-section > p {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
