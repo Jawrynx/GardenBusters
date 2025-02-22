@@ -41,3 +41,88 @@
 .testimonial-card > h3 {
     font-size: 2rem;
 }
+
+@media (max-width: 1200px) {
+    .stars {
+        scale: 3;
+    }
+
+    .testimonial-card > h2 {
+        font-size: 2rem;
+    }
+    .testimonial-card > h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .testimonials {
+        position: relative;
+        top: 150vh;
+    }
+
+    .stars {
+        scale: 2.5;
+    }
+
+    .testimonial-card > h2 {
+        font-size: 1.5rem;
+    }
+    .testimonial-card > h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials {
+        position: relative;
+        top: 110vh;
+    }
+
+    .stars {
+        scale: 2.5;
+    }
+
+    .testimonial-card > h2 {
+        font-size: 1.5rem;
+    }
+    .testimonial-card > h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 620px) {
+    .testimonials {
+        position: relative;
+        top: 90vh;
+    }
+
+    .stars {
+        scale: 2.3;
+    }
+
+    .testimonial-card > h2 {
+        font-size: 1.5rem;
+    }
+    .testimonial-card > h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials {
+        position: relative;
+        top: 20vh;
+    }
+
+    .stars {
+        scale: 2;
+    }
+
+    .testimonial-card > h2 {
+        font-size: 1.5rem;
+    }
+    .testimonial-card > h3 {
+        font-size: 1.2rem;
+    }
+}
