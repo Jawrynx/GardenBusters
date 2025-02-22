@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import Testimonial from "./Testimonial";
 import "./css/Home.css";
 import "./css/Carousel.scss"
 import axios from 'axios';
@@ -12,6 +13,8 @@ function Home() {
   const pRef = useRef(null);
   const h3Ref = useRef(null);
   const [service, setService] = useState();
+  const [slides, setSlides] = useState();
+
 
   useEffect(() => {
     
@@ -26,6 +29,19 @@ function Home() {
 
     fetchService();
   }, []);
+
+  useEffect(() => {
+    const fetchBeforeAfter = async () => {
+      try {
+        const response = await axios.get('http://127.0.0.1:8000/api/beforeafter/'); // Replace with your actual API endpoint
+        setSlides(response.data);
+      } catch (error) {
+        console.error('Error fetching BeforeAfter data:', error);
+      }
+    };
+
+    fetchBeforeAfter();
+  },[]);
 
   useEffect(() => {
     if (bannerRef.current && pRef.current && h3Ref.current) {
@@ -472,24 +488,6 @@ const Carousel = ({
   );
 };
 
-const slides = [
-  {
-    title: 'First title',
-    subtitle: 'First subtitle',
-    image: 'https://picsum.photos/id/1/1280/500',
-  },
-  {
-    title: 'Second title',
-    subtitle: 'Second subtitle',
-    image: 'https://picsum.photos/id/234/1280/500',
-  },
-  {
-    title: 'Third title',
-    subtitle: 'Third subtitle',
-    image: 'https://picsum.photos/id/790/1280/500',
-  },
-];
-
   return (
     <>
       <div className="home-container">
@@ -624,6 +622,9 @@ const slides = [
         <h3>Before / After</h3>
         <Carousel autoPlay={true} useRightLeftTriangles={true} slides={slides} />
         </div>
+      </div>
+      <div className="testimonials">
+        <Testimonial />
       </div>
     </>
   );

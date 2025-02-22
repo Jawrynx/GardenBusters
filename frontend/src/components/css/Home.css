@@ -17,6 +17,7 @@
 
 .home-container {
     width: 100%;
+    height: 100vh;
     overflow: hidden; 
     display: flex; 
     justify-content: center;
@@ -26,6 +27,7 @@
     display: flex;
     flex-direction: row !important;
     align-items: start !important;
+    height: 150vh;
 }
 
 .banner {
@@ -105,14 +107,15 @@
     justify-content: center;
     align-items: center;
     width: 60%;
+    height: 100%;
 }
 
 .beforeAfters {
     width: 40%;
-    height: 100vh;
+    height: 99%;
     font-family: 'Outfit', serif;
     margin-right: 15px;
-    background-color: yellowgreen;
+    background-color: var(--color-secondary);
     padding: 15px;
     border-radius: 15px;
     border: 2px solid white;
@@ -129,7 +132,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    height: 100%;
 }
 
 .home-services-container > .content-section > div {
@@ -149,16 +152,33 @@
     width: 90%;
 }
 
+#root > div > div.App > div.home-content-container > div.home-services-container > div.content-section > div > p {
+    font-weight: bold;
+    font-size: 1.1rem;
+    background-color: var(--color-secondary);
+    width: 90%;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+}
+
+#root > div > div.App > div.home-content-container > div.home-services-container > div.content-section > p {
+    background-color: lightgray;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
 .home-services-container > .content-section > div > p,
-#root > div > div.App > div.home-services-container > .content-section > p {
+#root > div > div.App > div.home-content-container > div.home-services-container > div.content-section > p {
     margin: 20px;
     width: 95%;
     text-align: center;
+    font-family: 'Outfit', serif;
 }
 
 .home-services-container > .content-section > img {
-    height: 300px;
-    width: 96%;
+    height: 45%;
+    width: 92%;
     object-fit: cover;
     margin-bottom: 15px;
     border-radius: 10px;
@@ -178,7 +198,7 @@
 
 .beforeAfters > h3 {
     font-family: 'Rubik Dirt', serif;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: rgb(255, 255, 255);
     background-color: rgb(0, 0, 0);
     margin-top: 5px;
@@ -199,7 +219,25 @@
 }
 
 .carousel-caption {
-    color: black !important;
+    color: white !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-caption > h3 {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    color: white;
+    width: fit-content;
+    padding: 5px 25px;
+}
+
+.carousel-caption > p {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    width: fit-content;
+    padding: 1px 5px;
 }
 
 @-webkit-keyframes fadeEffect {
@@ -214,12 +252,12 @@
 
 @-webkit-keyframes fadeEffect2 {
     0% { background-color: rgba(0, 0, 0, 0.9); }
-    100% { background-color: green; } 
+    100% { background-color: #8b8515; } 
 }
   
 @keyframes fadeEffect2 {
     0% { background-color: rgba(0, 0, 0, 0.9); }
-    100% { background-color: green; }
+    100% { background-color: #8b8515; }
 }
 
 @-webkit-keyframes fadeInverse {
@@ -240,7 +278,7 @@
 
 
 @keyframes fadeInverse2 {
-    0% { background-color: green;}
+    0% { background-color: #8b8515; }
     100% { background-color: rgba(0, 0, 0, 0.9); }
 }
 
@@ -276,6 +314,11 @@
 
 /* Media Queries */
 @media (max-width: 1200px) {
+
+    #root > div > div.App > div.home-content-container > div.home-services-container > div.content-section > p {
+        font-size: 0.9rem;
+    }
+
     .banner {
         font-size: 2em; /* Adjust font size */
     }
@@ -294,6 +337,10 @@
 }
 
 @media (max-width: 992px) {
+    #root > div > div.App > div.home-content-container > div.home-services-container > div.content-section > p {
+        font-size: 1.1rem;
+    }
+
     .home-content-container {
         flex-direction: column !important;
         align-items: center !important;
@@ -302,6 +349,12 @@
     .home-services-container,
     .beforeAfters {
         width: 90%;
+        margin-right: 0;
+        margin-top: 50px;
+    }
+
+    .beforeAfters {
+        width: 82%;
     }
 
     .banner {
@@ -322,6 +375,16 @@
 }
 
 @media (max-width: 768px) { 
+    #root > div > div.App > div.home-content-container > div.home-services-container > div.content-section > p {
+        font-size: 0.9rem;
+    }
+
+    .beforeAfters {
+        position: relative;
+        margin-top: 75px;
+        width: 78%;
+    }
+
     .banner {
         font-size: 1.5em;
         padding: 5px;
@@ -346,6 +409,15 @@
 }
 
 @media (max-width: 480px) {
+    .carousel-caption {
+        font-size: 0.6rem !important;
+    }
+
+    .beforeAfters {
+        width: 75%;
+        margin-top: 15px;
+    }
+
     .banner {
         font-size: 1.5em; 
     }
@@ -361,5 +433,12 @@
     .banner p {
         font-size: 0.7rem;
         padding: 5px 60px;
+    }
+    #root > div > div.App > div.home-content-container > div.home-services-container > div.content-section > p {
+        display: none;
+    }
+
+    .beforeAfters > h3 {
+        font-size: 1.5rem;
     }
 }

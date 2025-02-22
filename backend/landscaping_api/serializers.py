@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Service, Testimonial, Contact, Image
+from .models import Service, BeforeAfter, Testimonial, Contact, Image
 
 class ImageSerializer(serializers.ModelSerializer):
     image = serializers.ImageField(use_url=True)
@@ -15,7 +15,11 @@ class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Service
         fields = '__all__'
-        
+
+class BeforeAfterSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BeforeAfter
+        fields = '__all__'
 
 class TestimonialSerializer(serializers.ModelSerializer):
     class Meta:

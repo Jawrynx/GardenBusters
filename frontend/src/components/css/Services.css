@@ -14,6 +14,15 @@
     border-radius: 15px;
 }
 
+#service-list .css-27ov7w-JoyCardContent-root {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#service-list .css-11885m6-JoyCard-root {
+    height: fit-content;
+}
+
 #service-list .css-ar9ysw-JoyTypography-root,
 #service-list .css-n3pxpz-JoyTypography-root,
 #service-list .css-djhvuu-JoyTypography-root,
@@ -32,6 +41,14 @@
 #single-service > div {
     width: 75%;
     border-radius: 15px;
+}
+
+.css-1s72fcq-MuiPaper-root {
+    background-color: var(--color-secondary) !important;
+}
+
+#service-list .css-11885m6-JoyCard-root {
+    background-color: #fde6d4;
 }
 
 #single-service > div > #image-slide > div > #service-image {
@@ -88,6 +105,22 @@
 @keyframes slideIn {
     to {
       left: 0;
+    }
+}
+
+@media (max-width: 1400px) {
+    #service-list .css-11885m6-JoyCard-root {
+        min-height: 75vh;
+    }
+}
+
+@media (max-width: 1200px) {
+    #service-list .css-11885m6-JoyCard-root {
+        min-height: fit-content;
+    }
+
+    #service-list {
+        width: 100%;
     }
 }
 

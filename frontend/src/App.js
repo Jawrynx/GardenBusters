@@ -5,7 +5,7 @@ import Home from './components/Home'; // Import your components
 import Services from './components/Services';
 import About from './components/About';
 import Contact from './components/Contact';
-import Testimonials from './components/Testimonials';
+import Testimonial from './components/Testimonial';
 import Navbar from './components/Navbar'; 
 import ServicePage from './components/ServicePage';
 import './App.css';

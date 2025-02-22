@@ -49,7 +49,6 @@ function ServiceList() {
         sx={{
           p: 2,
           width: "90%",
-          backgroundColor: "lightgray",
         }}
       >
         <Grid container spacing={2}>

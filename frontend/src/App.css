@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Rubik+Dirt&family=Slabo+13px&display=swap');
 
+:root {
+  --color-primary: #dcb597;
+  --color-secondary: #8b8515;
+}
+
 html {
   height: 100%;
 }
 
 body {
-  background-color: rgb(115, 255, 0);
+  background-color: var(--color-primary);
 }
 
 .App {
