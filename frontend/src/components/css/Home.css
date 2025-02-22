@@ -20,9 +20,14 @@
     overflow: hidden; 
     display: flex; 
     justify-content: center;
-    align-items: center; 
-  }
-  
+}
+
+.home-content-container {
+    display: flex;
+    flex-direction: row !important;
+    align-items: start !important;
+}
+
 .banner {
     color: white;
     font-size: 3em;
@@ -99,6 +104,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 60%;
+}
+
+.beforeAfters {
+    width: 40%;
+    height: 100vh;
+    font-family: 'Outfit', serif;
+    margin-right: 15px;
+    background-color: yellowgreen;
+    padding: 15px;
+    border-radius: 15px;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .home-services-container > .content-section {
@@ -154,6 +174,32 @@
     display: flex;
     justify-content: space-evenly;
     width: 90%;
+}
+
+.beforeAfters > h3 {
+    font-family: 'Rubik Dirt', serif;
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    margin-top: 5px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    padding: 15px;
+    width: 90%;
+    letter-spacing: 5px;
+}
+
+.carousel-slide, .carousel-slide > img, .carousel-slider-wrapper {
+    height: 100% !important;
+    display: block;
+}
+
+.carousel-slide > img {
+    object-fit: contain;
+}
+
+.carousel-caption {
+    color: black !important;
 }
 
 @-webkit-keyframes fadeEffect {
@@ -248,6 +294,16 @@
 }
 
 @media (max-width: 992px) {
+    .home-content-container {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .home-services-container,
+    .beforeAfters {
+        width: 90%;
+    }
+
     .banner {
         font-size: 1.5em; /* Adjust font size */
     }
