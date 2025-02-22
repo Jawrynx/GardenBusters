@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Testimonial from './components/Testimonial';
 import Navbar from './components/Navbar'; 
 import ServicePage from './components/ServicePage';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
+
+      <Footer />
     </div>
   );
 }

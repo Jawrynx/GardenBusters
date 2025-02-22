@@ -76,7 +76,7 @@
 @media (max-width: 768px) {
     .testimonials {
         position: relative;
-        top: 110vh;
+        top: 120vh;
     }
 
     .stars {
@@ -91,10 +91,10 @@
     }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 599px) {
     .testimonials {
         position: relative;
-        top: 90vh;
+        top: 100vh;
     }
 
     .stars {
@@ -112,7 +112,7 @@
 @media (max-width: 480px) {
     .testimonials {
         position: relative;
-        top: 20vh;
+        top: 50vh;
     }
 
     .stars {
