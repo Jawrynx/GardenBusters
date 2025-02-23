@@ -1,1 +1,1 @@
-web: gunicorn backend.GardenBusters.wsgi:application
+web: gunicorn GardenBusters.wsgi:application

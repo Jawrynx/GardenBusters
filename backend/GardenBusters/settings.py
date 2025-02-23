@@ -78,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend.GardenBusters.wsgi.application'
+WSGI_APPLICATION = 'GardenBusters.wsgi.application'
 
 
 # Database
