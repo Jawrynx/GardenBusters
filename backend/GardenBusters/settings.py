@@ -30,7 +30,7 @@ DEBUG = False
 ALLOWED_HOSTS = [os.environ.get('DYNO')] if os.environ.get('DYNO') else ['127.0.0.1']
 
 
-# Application definition
+# Application definition FUCK
 
 INSTALLED_APPS = [
     'django.contrib.admin',
