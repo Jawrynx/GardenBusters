@@ -70,7 +70,7 @@ export default function ButtonAppBar() {
 
           {/* Add your navigation links */}
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            <Button color="inherit" component={Link} to="/">
+            <Button color="inherit" component={Link} to="/home">
               Home
             </Button>
             <Button color="inherit" component={Link} to="/services">

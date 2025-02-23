@@ -119,17 +119,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0px 0px 10px 2px black;
 }
 
 .home-services-container > .content-section {
     margin: 20px;
     background-color: rgb(231, 231, 231);
     border-radius: 15px;
-    border: 2px solid green;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100%;
+    box-shadow: 0px 0px 10px 2px black;
 }
 
 .home-services-container > .content-section > div {
@@ -141,9 +142,11 @@
 .home-services-container > .content-section > div > h2 {
     text-transform: uppercase;
     font-family: 'Rubik Dirt', serif;
-    background-color: yellow;
+    background-color: black;
+    color: white;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 50px;
+    font-size: 2rem;
     border: 1px solid black;
     margin: 20px;
     width: 90%;
@@ -157,6 +160,7 @@
     padding: 5px;
     border-radius: 10px;
     color: white;
+    box-shadow: 0px 0px 10px 1px black;
 }
 
 #root > div > div.App > div.home-content-container > div.home-services-container > div.content-section > p {
@@ -179,6 +183,7 @@
     object-fit: cover;
     margin-bottom: 15px;
     border-radius: 10px;
+    box-shadow: 0px 0px 10px 2px black;
 }
 
 .home-services-container > div > .css-1ricwku-MuiButtonBase-root-MuiToggleButton-root {
